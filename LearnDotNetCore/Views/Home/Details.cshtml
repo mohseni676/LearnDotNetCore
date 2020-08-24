@@ -1,0 +1,18 @@
+﻿@model LearnDotNetCore.Models.Pie
+
+<div class="container">
+    <div class="media">
+        <div class="col-sm">
+            <img class="mr-sm-4" src="@Model.ImageUrl" />
+        </div>
+        <div class="media-body">
+            <h3>@Model.Name</h3>
+            <h2>@Model.Price.ToString("c")</h2>
+        </div>
+    </div>
+    <div class="container">
+        <p>
+            @Model.LongDescription
+        </p>
+    </div>
+</div>

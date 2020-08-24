@@ -22,5 +22,12 @@ namespace LearnDotNetCore.Controllers
             var data = pieRepository.GetAllPies();
             return View(data);
         }
+
+        public IActionResult Details(int id)
+        {
+            var pie = pieRepository.getPieById(id);
+
+            return View(pie);
+        }
     }
 }

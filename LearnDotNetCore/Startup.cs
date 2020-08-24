@@ -44,13 +44,15 @@ namespace LearnDotNetCore
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseRouting();
+            app.UseCors();
+            app.UseHttpsRedirection();
             app.UseAuthorization();
-            app.UseMvc(routes => {
-
-                routes.MapRoute(
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
                     name: "default",
-                    template: "{controller:Home}/{action=Index}/{id?}"
-                    );
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
             //app.UseEndpoints(endpoints =>
             //{
