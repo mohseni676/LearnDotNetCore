@@ -31,6 +31,7 @@ namespace LearnDotNetCore
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IPieRepository, PieRepository>();
+            services.AddTransient<ICommentsRepositoy, CommentRepository>();
             
             services.AddMvc(options=>options.EnableEndpointRouting=false);
             

@@ -12,6 +12,7 @@ namespace LearnDotNetCore.Models
         {
         }
         public DbSet<Pie> Pies { get; set; }
+        public DbSet<Comments> Comments { get; set; }   
 
     }
 }
